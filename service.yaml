@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: students-svc
+spec:
+  selector:
+    app: students-svc
+  ports:
+  - port: 80
+    targetPort: 8080
