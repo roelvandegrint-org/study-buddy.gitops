@@ -1,2 +1,6 @@
 bases:
 - ../../base
+
+images:
+- name: image
+  newTag: 0.1.0-arm64
