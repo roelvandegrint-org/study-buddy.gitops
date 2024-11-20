@@ -15,5 +15,5 @@ spec:
         app: students-svc
     spec:
       containers:
-      - image: roelvandegrint/image:0.1.0-arm64
-        name: image
+        - name: students-svc
+          image: students-svc:0.0.1
