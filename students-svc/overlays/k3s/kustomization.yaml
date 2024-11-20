@@ -1,6 +1,9 @@
 bases:
 - ../../base
 
+patches:
+- path: ./service.override.yaml
+
 images:
 - name: roelvandegrint/image
   newTag: 0.1.0-arm64
