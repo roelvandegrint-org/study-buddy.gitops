@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: study-buddy-students-svc
+  annotations:
+    cert-manager.io/issuer: letsencrypt-production-http
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+spec:
+  tls:
+    - hosts:
+        - sts.roelvandegrint.com
+      secretName: argocd-ingress-http-production
+  rules:
+    - host: sts.roelvandegrint.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: students-svc
+                port:
+                  number: 8080
