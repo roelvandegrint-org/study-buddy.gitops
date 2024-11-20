@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: students-svc
+  name: students-svc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: students-svc
+  template:
+    metadata:
+      labels:
+        app: students-svc
+    spec:
+      containers:
+      - image: roelvandegrint/image:0.1.0-arm64
+        name: image
