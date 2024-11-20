@@ -16,4 +16,4 @@ spec:
     spec:
       containers:
         - name: students-svc
-          image: image:0.0.1
+          image: roelvandegrint/image:0.0.1
