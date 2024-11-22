@@ -3,4 +3,4 @@ bases:
 
 images:
 - name: roelvandegrint/image
-  newTag: roel-is-cool
+  newTag: new-tag-from-other-repo
