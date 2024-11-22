@@ -1,4 +1,5 @@
 name: Update Students Svc image tag
+
 # When this action will be executed
 on: 
   repository_dispatch:
