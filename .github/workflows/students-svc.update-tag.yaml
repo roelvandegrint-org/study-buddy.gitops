@@ -28,4 +28,4 @@ jobs:
         run: cat students-svc/overlays/k3s/kustomization.yaml
 
       - name: Push changes
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v5
