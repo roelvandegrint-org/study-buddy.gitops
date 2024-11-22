@@ -16,7 +16,7 @@ jobs:
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@v2
         with:
-          include: students-svc/overlays/k3s/kustomization.yml
+          include: students-svc/overlays/k3s/kustomization.yaml
           find: "newTag:\\s*.*\n"
           replace: "newTag: ${{ github.event.client_payload.tag }}\n"
           regex: true
@@ -24,7 +24,7 @@ jobs:
       - name: Commit and push
         uses: EndBug/add-and-commit@v9
         with:
-          add: students-svc/overlays/k3s/kustomization.yml
+          add: students-svc/overlays/k3s/kustomization.yaml
           author_name: Roel van de Grint
           author_email: roelvandegrint@gmail.com
           message: Update Backend API image tag to ${{ github.event.client_payload.tag }}
