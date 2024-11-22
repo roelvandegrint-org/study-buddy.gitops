@@ -13,18 +13,18 @@ jobs:
       - name: Checkout to the branch
         uses: actions/checkout@v3
 
-      - name: Find and Replace
-        uses: jacobtomlinson/gha-find-replace@v2
-        with:
-          include: students-svc/overlays/k3s/kustomization.yml
-          find: "newTag:\\s*.*\n"
-          replace: "newTag: ${{ github.event.client_payload.tag }}\n"
-          regex: true
+      # - name: Find and Replace
+      #   uses: jacobtomlinson/gha-find-replace@v2
+      #   with:
+      #     include: students-svc/overlays/k3s/kustomization.yml
+      #     find: "newTag:\\s*.*\n"
+      #     replace: "newTag: ${{ github.event.client_payload.tag }}\n"
+      #     regex: true
 
-      - name: Commit and push
-        uses: EndBug/add-and-commit@v9
-        with:
-          add: students-svc/overlays/k3s/kustomization.yml
-          author_name: Roel van de Grint
-          author_email: roelvandegrint@gmail.com
-          message: Update Backend API image tag to ${{ github.event.client_payload.tag }}
+      # - name: Commit and push
+      #   uses: EndBug/add-and-commit@v9
+      #   with:
+      #     add: students-svc/overlays/k3s/kustomization.yml
+      #     author_name: Roel van de Grint
+      #     author_email: roelvandegrint@gmail.com
+      #     message: Update Backend API image tag to ${{ github.event.client_payload.tag }}
