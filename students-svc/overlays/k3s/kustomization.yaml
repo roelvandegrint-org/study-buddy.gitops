@@ -2,5 +2,5 @@ bases:
 - ../../base
 
 images:
-- name: roelvandegrint.azurecr.io/study-buddy
+- name: students-svc
   newTag: students-svc:db93e2a372f9228aba0952e68bc1f26dd32ce5d7

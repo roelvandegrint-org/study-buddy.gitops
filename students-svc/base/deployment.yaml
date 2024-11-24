@@ -15,5 +15,5 @@ spec:
         app: students-svc
     spec:
       containers:
-        - name: roelvandegrint.azurecr.io/study-buddy
-          image: roelvandegrint/image:0.0.1
+        - name: students-svc
+          image: roelvandegrint.azurecr.io/study-buddy/students-svc:latest
