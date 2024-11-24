@@ -17,3 +17,5 @@ spec:
       containers:
         - name: students-svc
           image: roelvandegrint.azurecr.io/study-buddy/students-svc:latest
+      imagePullSecrets:
+        - name: roelvandegrint.azurecr.io
