@@ -6,6 +6,7 @@ metadata:
   name: students-svc
 spec:
   replicas: 1
+  revisionHistoryLimit: 1
   selector:
     matchLabels:
       app: students-svc
