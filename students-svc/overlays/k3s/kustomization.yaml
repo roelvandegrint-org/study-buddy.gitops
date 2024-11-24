@@ -3,4 +3,4 @@ bases:
 
 images:
 - name: roelvandegrint/image
-  newTag: new-tag-from-other-repo
+  newTag: roelvandegrint.azurecr.io/study-buddy/students-svc:db93e2a372f9228aba0952e68bc1f26dd32ce5d7
