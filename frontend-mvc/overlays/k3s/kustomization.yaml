@@ -1,0 +1,6 @@
+resources:
+- ../../base
+
+images:
+- name: roelvandegrint.azurecr.io/study-buddy/frontend-mvc
+  newTag: ""

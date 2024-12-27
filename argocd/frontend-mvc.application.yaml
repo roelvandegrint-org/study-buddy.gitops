@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: frontend-mvc
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: study-buddy
+
+  source:
+    repoURL: https://github.com/roelvandegrint/study-buddy.gitops
+    targetRevision: HEAD
+    path: frontend-mvc/overlays/k3s
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: study-buddy

@@ -1,0 +1,25 @@
+name: Update Frontend (MVC) image tag
+
+# When this action will be executed
+on: 
+  repository_dispatch:
+    types:
+    - frontend-mvc-updated
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout to the branch
+        uses: actions/checkout@v4
+
+      - name: Find and Replace
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          include: frontend-mvc/overlays/k3s/kustomization.yaml
+          find: "newTag:\\s*.*\n"
+          replace: "newTag: ${{ github.event.client_payload.tag }}\n"
+          regex: true
+
+      - name: Push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
