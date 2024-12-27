@@ -10,7 +10,7 @@ spec:
 
   source:
     repoURL: https://github.com/roelvandegrint/study-buddy.gitops
-    targetRevision: argocd-application
+    targetRevision: HEAD
     path: students-svc/overlays/k3s
 
   destination:
