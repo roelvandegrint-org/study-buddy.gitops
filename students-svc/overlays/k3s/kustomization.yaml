@@ -3,4 +3,4 @@ resources:
 
 images:
 - name: roelvandegrint.azurecr.io/study-buddy/students-svc
-  newTag: e529fc02562137b10a4cea32209b8cb61ecbbdf4
+  newTag: b6a1c3c7c40fae41d2704b60fdb0a19cfa456def
