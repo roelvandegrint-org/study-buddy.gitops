@@ -1,0 +1,11 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: students-svc
+spec:
+  endpoints:
+    - port: http
+      scheme: http
+  selector:
+    matchLabels:
+      app: students-svc

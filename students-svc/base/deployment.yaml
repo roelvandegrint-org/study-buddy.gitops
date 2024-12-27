@@ -18,5 +18,8 @@ spec:
       containers:
         - name: students-svc
           image: roelvandegrint.azurecr.io/study-buddy/students-svc:latest
+          ports:
+            - name: http
+              containerPort: 8080
       imagePullSecrets:
         - name: roelvandegrint.azurecr.io
