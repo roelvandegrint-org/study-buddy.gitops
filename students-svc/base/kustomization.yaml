@@ -1,4 +1,4 @@
 resources:
 - ./deployment.yaml
-- ./service.
+- ./service.yaml
 - ./service-monitor.yaml
