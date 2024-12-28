@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: frontend-blazor
+  name: frontend-blazor
+spec:
+  replicas: 1
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      app: frontend-blazor
+  template:
+    metadata:
+      labels:
+        app: frontend-blazor
+    spec:
+      containers:
+        - name: frontend-mvc
+          image: roelvandegrint.azurecr.io/study-buddy/frontend-blazor:latest
+          ports:
+            - name: http
+              containerPort: 8080
+      imagePullSecrets:
+        - name: roelvandegrint.azurecr.io
