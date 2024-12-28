@@ -3,4 +3,4 @@ resources:
 
 images:
 - name: roelvandegrint.azurecr.io/study-buddy/frontend-mvc
-  newTag: ""
+  newTag: 117a940366da4c9f4375a61040d2d56f09917275
