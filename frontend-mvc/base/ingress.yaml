@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mvc.study-buddy.roelvandegrint.com
+  annotations:
+    cert-manager.io/issuer: letsencrypt-production-http
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+spec:
+  tls:
+    - hosts:
+        - mvc.study-buddy.roelvandegrint.com
+      secretName: frontend-mvc-ingress-http-production
+  rules:
+    - host: mvc.study-buddy.roelvandegrint.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: frontend-mvc
+                port:
+                  number: 80
