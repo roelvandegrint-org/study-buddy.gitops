@@ -9,7 +9,7 @@ spec:
   tls:
     - hosts:
         - mvc.study-buddy.roelvandegrint.com
-      secretName: argocd-ingress-http-production
+      secretName: frontend-mvc-ingress-http-production
   rules:
     - host: mvc.study-buddy.roelvandegrint.com
       http:
