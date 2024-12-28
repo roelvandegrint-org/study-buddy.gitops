@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-blazor
+  labels:
+    app: frontend-blazor
+spec:
+  selector:
+    app: frontend-blazor
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080
