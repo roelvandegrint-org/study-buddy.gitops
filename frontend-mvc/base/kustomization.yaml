@@ -1,5 +1,4 @@
 resources:
-- ./certmanager-letsencrypt-production.issuer.yaml
 - ./deployment.yaml
 - ./ingress.yaml
 - ./service.yaml
