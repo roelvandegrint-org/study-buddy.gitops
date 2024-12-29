@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: study-buddy
+  namespace: argocd
+spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
+  generators:
+  - git:
+      repoURL: https://github.com/roelvandegrint-org/study-buddy.gitops
+      revision: HEAD
+      directories:
+      - path: '**/overlays/k3s'
+  template:
+    metadata:
+      name: '{{index .path.segments 0}}'
+    spec:
+      project: study-buddy
+      source:
+        repoURL: https://github.com/roelvandegrint-org/study-buddy.gitops
+        targetRevision: HEAD
+        path: '{{.path.path}}'
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: study-buddy
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+          allowEmpty: true
+        syncOptions:
+        - CreateNamespace=true
