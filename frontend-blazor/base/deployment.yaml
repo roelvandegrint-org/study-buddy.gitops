@@ -16,7 +16,7 @@ spec:
         app: frontend-blazor
     spec:
       containers:
-        - name: frontend-mvc
+        - name: frontend
           image: roelvandegrint.azurecr.io/study-buddy/frontend-blazor:latest
           ports:
             - name: http
