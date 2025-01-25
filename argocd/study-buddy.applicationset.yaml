@@ -7,27 +7,39 @@ spec:
   goTemplate: true
   goTemplateOptions: ["missingkey=error"]
   generators:
-  - git:
-      repoURL: https://github.com/roelvandegrint-org/study-buddy.gitops
-      revision: HEAD
-      directories:
-      - path: '**/overlays/k3s'
+    - matrix:
+        generators:
+          - git:
+              directories:
+              - path: "**/overlays/k3s"
+              repoURL: https://github.com/roelvandegrint-org/study-buddy.gitops
+              revision: HEAD
+          - scmProvider:
+              filters:
+                - repositoryMatch: ^study-buddy.gitops 
+                  branchMatch: main|feature
+              github:
+                organization: roelvandegrint-org
+                allBranches: true
+                tokenRef:
+                  key: pat_classic
+                  secretName: github-pat
   template:
     metadata:
-      name: '{{index .path.segments 0}}'
+      name: "{{index .path.segments 0}}-{{ .branch }}"
     spec:
       project: study-buddy
       source:
         repoURL: https://github.com/roelvandegrint-org/study-buddy.gitops
-        targetRevision: HEAD
-        path: '{{.path.path}}'
+        targetRevision: "{{ .branch }}"
+        path: "{{.path.path}}"
       destination:
         server: https://kubernetes.default.svc
-        namespace: study-buddy
+        namespace: "study-buddy-{{.branch}}"
       syncPolicy:
         automated:
           prune: true
           selfHeal: true
           allowEmpty: true
         syncOptions:
-        - CreateNamespace=true
+          - CreateNamespace=true
