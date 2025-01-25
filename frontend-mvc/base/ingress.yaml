@@ -8,10 +8,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - mvc.study-buddy.roelvandegrint.com
+        - mvc.feature.study-buddy.roelvandegrint.com
       secretName: frontend-mvc-ingress-http-production
   rules:
-    - host: mvc.study-buddy.roelvandegrint.com
+    - host: mvc.feature.study-buddy.roelvandegrint.com
       http:
         paths:
           - path: /

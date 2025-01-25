@@ -8,10 +8,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - blazor.study-buddy.roelvandegrint.com
+        - blazor.feature.study-buddy.roelvandegrint.com
       secretName: frontend-blazor-ingress-http-production
   rules:
-    - host: blazor.study-buddy.roelvandegrint.com
+    - host: blazor.feature.study-buddy.roelvandegrint.com
       http:
         paths:
           - path: /
